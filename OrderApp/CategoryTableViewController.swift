@@ -8,9 +8,33 @@
 import UIKit
 
 class CategoryTableViewController: UITableViewController {
+    let menuController = MenuController()
+    var categorues = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Task.init {
+            do {
+                let categories = try await menuController.fetchCategories()
+                updateUI(with: categories)
+            } catch {
+                displayError(error, title: "Failed to Fetch Categories")
+            }
+        }
+        
+        func updateUI(with categories: [String]) {
+            self.categorues = categories
+            self.tableView.reloadData()
+        }
+        
+        func displayError(_ error: Error, title: String) {
+            guard let _ = viewIfLoaded?.window else { return }
+            
+            let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
