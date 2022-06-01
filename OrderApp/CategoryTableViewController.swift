@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+@MainActor
 class CategoryTableViewController: UITableViewController {
     let menuController = MenuController()
     var categorues = [String]()
