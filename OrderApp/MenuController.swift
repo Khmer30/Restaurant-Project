@@ -25,7 +25,7 @@ class MenuController {
         
         guard let httpRespose = response as? HTTPURLResponse,
               httpRespose.statusCode == 200 else {
-            throw MenuControllerError.categoriesNotFound
+                throw MenuControllerError.categoriesNotFound
         }
         
         let decoder = JSONDecoder()
@@ -40,6 +40,16 @@ class MenuController {
         components.queryItems = [URLQueryItem(name: "category", value: categoryName)]
         let menuURL = components.url!
         let (data, response) = try await URLSession.shared.data(from: menuURL)
+        
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            throw MenuControllerError.menuItemsNotFound
+        }
+        
+        let decoder = JSONDecoder()
+        let menuResponse = try decoder.decode(MenuResponse.self, from: data)
+        
+        return menuResponse.items
     }
 
     typealias MinutesToPrepare = Int
@@ -57,7 +67,15 @@ class MenuController {
         
         let (data, response) = try await URLSession.shared.data(for: request)
         
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+                throw MenuControllerError.orderRequestFailed
+        }
         
+        let decoder = JSONDecoder()
+        let orderResponse = try decoder.decode(OrderResponse.self, from: data)
+        
+        return orderResponse.prepTime
     }
 }
 
