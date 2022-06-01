@@ -42,7 +42,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Restaurant" id="kJg-vZ-q0q"/>
                     <connections>
-                        <segue destination="OCU-ez-BPk" kind="show" id="ibU-UL-yLr"/>
+                        <segue destination="OCU-ez-BPk" kind="show" destinationCreationSelector="showMenu:sender:" id="ibU-UL-yLr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p63-xp-EIy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
