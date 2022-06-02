@@ -35,12 +35,6 @@ class CategoryTableViewController: UITableViewController {
             alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     @IBSegueAction func showMenu(_ coder: NSCoder, sender: Any?) -> MenuTableViewController? {
@@ -51,8 +45,8 @@ class CategoryTableViewController: UITableViewController {
         
         let category = categories[indexPath.row]
         return MenuTableViewController(coder: coder, category: category)
-      
     }
+        
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
