@@ -9,13 +9,19 @@ import UIKit
 
 class OrderTableViewController: UITableViewController {
     
-    var order = Order()
+    var order = Order() {
+        didSet {
+            NotificationCenter.default.post(name: MenuController.orderUpdateNotification, object: nil)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       
+        
+        NotificationCenter.default.addObserver(tableView!, selector: #selector(UITableView.reloadData), name: MenuController.orderUpdateNotification, object: nil)
     }
+    
+  func 
 
     // MARK: - Table view data source
 
@@ -26,7 +32,7 @@ class OrderTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return order.menuItems.count
+        return MenuController.shared.order.menuItems.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -36,7 +42,7 @@ class OrderTableViewController: UITableViewController {
     }
     
     func configure(_ cell: UITableViewCell, forItemAt indexPath: IndexPath) {
-        let menuItem = order.menuItems[indexPath.row]
+        let menuItem = MenuController.shared.order.menuItems[indexPath.row]
         
         var content = cell.defaultContentConfiguration()
         content.text = menuItem.name

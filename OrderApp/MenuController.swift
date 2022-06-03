@@ -9,7 +9,10 @@ import Foundation
 
 class MenuController {
     
-//    static let shared = MenuController()
+    static let shared = MenuController()
+    static let orderUpdateNotification = Notification.Name("MenuController.orderUpdated")
+    var order = Order()
+    
     let baseURL = URL(string: "http://localhost:8080/")!
 
     enum MenuControllerError: Error, LocalizedError {
