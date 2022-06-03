@@ -82,7 +82,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="XZC-Xx-GTw" kind="show" identifier="showMenuItem" id="eyO-Hl-Wuo"/>
+                                    <segue destination="XZC-Xx-GTw" kind="show" identifier="showMenuItem" destinationCreationSelector="showMenuItem:sender:" id="eyO-Hl-Wuo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
