@@ -104,14 +104,74 @@
                     <view key="view" contentMode="scaleToFill" id="Rkh-HH-J2C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Cyq-QY-RQ8">
+                                <rect key="frame" x="15" y="155" width="384" height="77"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.on.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AOu-lh-t6R">
+                                        <rect key="frame" x="0.0" y="0.5" width="384" height="19"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MTW-YP-j7V">
+                                        <rect key="frame" x="0.0" y="28" width="384" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVL-d2-nR6">
+                                                <rect key="frame" x="0.0" y="0.0" width="337" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LtL-2n-Twx">
+                                                <rect key="frame" x="345" y="0.0" width="39" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09x-gj-Alj">
+                                        <rect key="frame" x="0.0" y="56.5" width="384" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42r-3a-c7p">
+                                <rect key="frame" x="15" y="754" width="384" height="44"/>
+                                <color key="backgroundColor" systemColor="tintColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Y7J-gH-1s8"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="tintColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Add To Order">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="HRA-pJ-16h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="42r-3a-c7p" firstAttribute="leading" secondItem="HRA-pJ-16h" secondAttribute="leading" constant="15" id="47Q-TZ-qBp"/>
+                            <constraint firstItem="HRA-pJ-16h" firstAttribute="bottom" secondItem="42r-3a-c7p" secondAttribute="bottom" constant="15" id="CsI-He-G7b"/>
+                            <constraint firstItem="HRA-pJ-16h" firstAttribute="trailing" secondItem="Cyq-QY-RQ8" secondAttribute="trailing" constant="15" id="U1Q-fT-m9d"/>
+                            <constraint firstItem="HRA-pJ-16h" firstAttribute="trailing" secondItem="42r-3a-c7p" secondAttribute="trailing" constant="15" id="okG-y8-L9s"/>
+                            <constraint firstItem="Cyq-QY-RQ8" firstAttribute="leading" secondItem="HRA-pJ-16h" secondAttribute="leading" constant="15" id="rdA-YI-YW1"/>
+                            <constraint firstItem="Cyq-QY-RQ8" firstAttribute="top" secondItem="HRA-pJ-16h" secondAttribute="top" constant="15" id="vTk-2R-kap"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OFD-4a-ntq"/>
+                    <connections>
+                        <outlet property="addToOrderButton" destination="42r-3a-c7p" id="zTv-Be-BUi"/>
+                        <outlet property="detailTextLabel" destination="09x-gj-Alj" id="NUr-xX-VHE"/>
+                        <outlet property="imageView" destination="AOu-lh-t6R" id="HvA-Pa-SLc"/>
+                        <outlet property="nameLabel" destination="VVL-d2-nR6" id="3Ye-Gi-StV"/>
+                        <outlet property="priceLabel" destination="LtL-2n-Twx" id="5vT-UT-6il"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0va-1M-dWE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="-229"/>
+            <point key="canvasLocation" x="1055.072463768116" y="-229.01785714285714"/>
         </scene>
         <!--Menu-->
         <scene sceneID="YMi-mX-v4Q">
@@ -199,8 +259,12 @@
     <resources>
         <image name="bag" catalog="system" width="128" height="128"/>
         <image name="list.bullet.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="photo.on.rectangle" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

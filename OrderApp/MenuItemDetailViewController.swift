@@ -9,6 +9,12 @@ import UIKit
 @MainActor
 class MenuItemDetailViewController: UIViewController {
 
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var detailTextLabel: UILabel!
+    @IBOutlet var addToOrderButton: UIButton!
+    
     let menuItem: MenuItem
 
     init?(coder: NSCoder, menuItem: MenuItem) {
@@ -22,6 +28,13 @@ class MenuItemDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateUI()
 
+    }
+    
+    func updateUI() {
+        nameLabel.text = menuItem.name
+        priceLabel.text = menuItem.price.formatted(.currency(code: "usd"))
+        detailTextLabel.text = menuItem.detailText
     }
 }
