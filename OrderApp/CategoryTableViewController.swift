@@ -8,6 +8,7 @@
 import UIKit
 @MainActor
 class CategoryTableViewController: UITableViewController {
+    
     let menuController = MenuController()
 //    let categories = try await MenuController.shared.fetchCategories()
     var categories = [String]()
