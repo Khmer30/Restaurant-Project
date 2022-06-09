@@ -39,7 +39,7 @@ class OrderTableViewController: UITableViewController {
         
         let formattedTotal = orderTotal.formatted(.currency(code: "usd"))
         let alertController = UIAlertController(title: "Confirm Order", message: "You are about to submit your order with a total of \(formattedTotal)", preferredStyle: .actionSheet)
-        alertController.addAction(UIAlertAction(title: "Submit", style: .default, handler: { _ in
+        alertController.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { _ in
             
             self.uploadOrder()
         }))

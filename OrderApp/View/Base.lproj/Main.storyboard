@@ -240,7 +240,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="g60-Db-ikL" kind="presentation" identifier="confirmOrder" id="wBr-ZS-iPo"/>
+                        <segue destination="g60-Db-ikL" kind="presentation" identifier="confirmOrder" destinationCreationSelector="confirmOrder:" id="wBr-ZS-iPo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZA-6z-Ojn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
