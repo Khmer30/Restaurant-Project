@@ -25,10 +25,14 @@ class OrderConfirmationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        confirmationLabel.text = "Thank you for your order! Your wait time is approximately \(minutesToPrepare) minutes."
     }
     
-    @IBAction func unwindToOrderList(segue: UIStoryboard) {
+    @IBAction func unwindToOrderList(segue: UIStoryboardSegue) {
         self.dismiss(animated: true, completion: nil)
+        if segue.identifier == "dismissConfirmaton" {
+            MenuController.shared.order.menuItems.removeAll()
+        }
     }
 }

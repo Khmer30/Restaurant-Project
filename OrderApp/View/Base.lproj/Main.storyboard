@@ -193,7 +193,7 @@
             </objects>
             <point key="canvasLocation" x="-1394.2028985507247" y="-229.01785714285714"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Order summary-->
         <scene sceneID="fRS-ng-LYW">
             <objects>
                 <tableViewController id="9rD-EX-ion" customClass="OrderTableViewController" customModule="OrderApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -232,13 +232,16 @@
                             <outlet property="delegate" destination="9rD-EX-ion" id="XT6-jj-Wcn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="4Jc-gZ-uYA">
+                    <navigationItem key="navigationItem" title="Order summary" id="4Jc-gZ-uYA">
                         <barButtonItem key="rightBarButtonItem" title="Submit" id="Fyy-1i-SOK">
                             <connections>
-                                <segue destination="g60-Db-ikL" kind="presentation" identifier="confirmOrder" destinationCreationSelector="confirmOrder:" id="cr8-fG-PEN"/>
+                                <action selector="submitTapped:" destination="9rD-EX-ion" id="4EQ-Nh-tkv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="g60-Db-ikL" kind="presentation" identifier="confirmOrder" id="wBr-ZS-iPo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZA-6z-Ojn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -252,32 +255,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for your order! Your wait time is approximately 15 mintues" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRd-eh-iuG">
-                                <rect key="frame" x="20" y="379" width="374" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lable" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRd-eh-iuG">
+                                <rect key="frame" x="8" y="344" width="398" height="23.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lto-SI-kZg">
-                                <rect key="frame" x="20" y="454" width="374" height="38"/>
+                                <rect key="frame" x="168.5" y="382.5" width="77.5" height="77"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Dismiss">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="unwindToOrderListWithSegue:" destination="g60-Db-ikL" eventType="touchUpInside" id="goM-AQ-aNQ"/>
+                                    <segue destination="J2r-qZ-jX0" kind="unwind" identifier="dismissConfirmaton" unwindAction="unwindToOrderListWithSegue:" id="C8N-03-fpn"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UGp-gb-mPk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SRd-eh-iuG" firstAttribute="top" secondItem="UGp-gb-mPk" secondAttribute="top" constant="335" id="8c5-gM-y73"/>
-                            <constraint firstItem="UGp-gb-mPk" firstAttribute="trailing" secondItem="SRd-eh-iuG" secondAttribute="trailing" constant="20" id="NXi-5a-Vkk"/>
-                            <constraint firstItem="UGp-gb-mPk" firstAttribute="trailing" secondItem="lto-SI-kZg" secondAttribute="trailing" constant="20" id="UGM-8c-BVt"/>
-                            <constraint firstItem="lto-SI-kZg" firstAttribute="top" secondItem="SRd-eh-iuG" secondAttribute="bottom" constant="28" id="cxD-gn-3oo"/>
-                            <constraint firstItem="SRd-eh-iuG" firstAttribute="leading" secondItem="UGp-gb-mPk" secondAttribute="leading" constant="20" id="hcF-q5-epW"/>
-                            <constraint firstItem="lto-SI-kZg" firstAttribute="leading" secondItem="UGp-gb-mPk" secondAttribute="leading" constant="20" id="ibL-b9-Wdw"/>
+                            <constraint firstItem="SRd-eh-iuG" firstAttribute="leading" secondItem="UGp-gb-mPk" secondAttribute="leading" constant="8" id="GYQ-Uw-Hzf"/>
+                            <constraint firstItem="lto-SI-kZg" firstAttribute="centerY" secondItem="5EY-ZW-ZeE" secondAttribute="centerY" id="gUB-Ob-ua8"/>
+                            <constraint firstItem="lto-SI-kZg" firstAttribute="centerX" secondItem="5EY-ZW-ZeE" secondAttribute="centerX" id="ips-z6-48i"/>
+                            <constraint firstAttribute="trailing" secondItem="SRd-eh-iuG" secondAttribute="trailing" constant="8" id="pHW-CX-Ey5"/>
+                            <constraint firstItem="SRd-eh-iuG" firstAttribute="top" secondItem="UGp-gb-mPk" secondAttribute="top" constant="300" id="tax-pf-EGL"/>
+                            <constraint firstItem="lto-SI-kZg" firstAttribute="top" secondItem="SRd-eh-iuG" secondAttribute="bottom" constant="15" id="woG-HH-rPJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jFl-aO-gWN"/>
@@ -286,6 +289,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Hq-Bo-EJw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="J2r-qZ-jX0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="302.89855072463769" y="466.74107142857139"/>
         </scene>
