@@ -232,11 +232,62 @@
                             <outlet property="delegate" destination="9rD-EX-ion" id="XT6-jj-Wcn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="4Jc-gZ-uYA"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="4Jc-gZ-uYA">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="Fyy-1i-SOK">
+                            <connections>
+                                <segue destination="g60-Db-ikL" kind="presentation" identifier="confirmOrder" destinationCreationSelector="confirmOrder:" id="cr8-fG-PEN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZA-6z-Ojn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-481" y="467"/>
+        </scene>
+        <!--Order Confirmation View Controller-->
+        <scene sceneID="Q77-pZ-UGu">
+            <objects>
+                <viewController id="g60-Db-ikL" customClass="OrderConfirmationViewController" customModule="OrderApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EY-ZW-ZeE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for your order! Your wait time is approximately 15 mintues" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRd-eh-iuG">
+                                <rect key="frame" x="20" y="379" width="374" height="47"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lto-SI-kZg">
+                                <rect key="frame" x="20" y="454" width="374" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Dismiss">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="unwindToOrderListWithSegue:" destination="g60-Db-ikL" eventType="touchUpInside" id="goM-AQ-aNQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UGp-gb-mPk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SRd-eh-iuG" firstAttribute="top" secondItem="UGp-gb-mPk" secondAttribute="top" constant="335" id="8c5-gM-y73"/>
+                            <constraint firstItem="UGp-gb-mPk" firstAttribute="trailing" secondItem="SRd-eh-iuG" secondAttribute="trailing" constant="20" id="NXi-5a-Vkk"/>
+                            <constraint firstItem="UGp-gb-mPk" firstAttribute="trailing" secondItem="lto-SI-kZg" secondAttribute="trailing" constant="20" id="UGM-8c-BVt"/>
+                            <constraint firstItem="lto-SI-kZg" firstAttribute="top" secondItem="SRd-eh-iuG" secondAttribute="bottom" constant="28" id="cxD-gn-3oo"/>
+                            <constraint firstItem="SRd-eh-iuG" firstAttribute="leading" secondItem="UGp-gb-mPk" secondAttribute="leading" constant="20" id="hcF-q5-epW"/>
+                            <constraint firstItem="lto-SI-kZg" firstAttribute="leading" secondItem="UGp-gb-mPk" secondAttribute="leading" constant="20" id="ibL-b9-Wdw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jFl-aO-gWN"/>
+                    <connections>
+                        <outlet property="confirmationLabel" destination="SRd-eh-iuG" id="TSN-Fn-yCe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Hq-Bo-EJw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302.89855072463769" y="466.74107142857139"/>
         </scene>
         <!--My Order-->
         <scene sceneID="cr8-Y6-0jP">

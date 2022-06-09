@@ -9,6 +9,7 @@ import UIKit
 
 class OrderTableViewController: UITableViewController {
     
+    var minutesToPrepareOrder = 0
     var order = Order() {
         didSet {
             NotificationCenter.default.post(name: MenuController.orderUpdateNotification, object: nil)
@@ -26,6 +27,10 @@ class OrderTableViewController: UITableViewController {
 //        print(MenuController.shared.order.menuItems.count)
 //        tableView.reloadData()
 //    }
+    
+    @IBSegueAction func confirmOrder(_ coder: NSCoder) -> OrderConfirmationViewController? {
+        return OrderConfirmationViewController(coder: coder, minutesToPrepare: minutesToPrepareOrder)
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
