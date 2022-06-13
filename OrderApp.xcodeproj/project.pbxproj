@@ -21,6 +21,7 @@
 		747B752528468D5700E8BF02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 747B752428468D5700E8BF02 /* Assets.xcassets */; };
 		747B752828468D5700E8BF02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 747B752628468D5700E8BF02 /* LaunchScreen.storyboard */; };
 		748626AA285015C900E278C2 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748626A9285015C900E278C2 /* OrderConfirmationViewController.swift */; };
+		74E9BB8D2855602000300D69 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9BB8C2855602000300D69 /* MenuItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		747B752728468D5700E8BF02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		747B752928468D5700E8BF02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		748626A9285015C900E278C2 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
+		74E9BB8C2855602000300D69 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				7433B6BA2846A39500FD248C /* ResponseModels.swift */,
 				7433B6B82846A0F600FD248C /* MenuItem.swift */,
+				74E9BB8C2855602000300D69 /* MenuItemCell.swift */,
 				7433B6BC2846A4A700FD248C /* Order.swift */,
 			);
 			path = Model;
@@ -195,6 +198,7 @@
 				7433B6B728469F8100FD248C /* MenuItemDetailViewController.swift in Sources */,
 				747B751E28468D5600E8BF02 /* SceneDelegate.swift in Sources */,
 				7433B6B52846995E00FD248C /* OrderTableViewController.swift in Sources */,
+				74E9BB8D2855602000300D69 /* MenuItemCell.swift in Sources */,
 				748626AA285015C900E278C2 /* OrderConfirmationViewController.swift in Sources */,
 				7433B6B12846993700FD248C /* CategoryTableViewController.swift in Sources */,
 			);
@@ -343,6 +347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GRF2HCTZ2H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OrderApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -370,6 +375,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GRF2HCTZ2H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OrderApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

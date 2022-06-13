@@ -40,13 +40,14 @@ class OrderTableViewController: UITableViewController {
         let formattedTotal = orderTotal.formatted(.currency(code: "usd"))
         let alertController = UIAlertController(title: "Confirm Order", message: "You are about to submit your order with a total of \(formattedTotal)", preferredStyle: .actionSheet)
         alertController.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { _ in
-            
+           
             self.uploadOrder()
         }))
         
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         present(alertController, animated: true,completion: nil)
+        
     }
     
     func uploadOrder() {
@@ -87,6 +88,7 @@ class OrderTableViewController: UITableViewController {
         var content = cell.defaultContentConfiguration()
         content.text = menuItem.name
         content.secondaryText = menuItem.price.formatted(.currency(code: "usd"))
+        content.image = UIImage(systemName: "photo.no.rectangle")
         cell.contentConfiguration = content
     }
     
