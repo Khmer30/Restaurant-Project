@@ -89,18 +89,18 @@ class MenuTableViewController: UITableViewController {
     }
     
     func configure(_ cell: UITableViewCell, forItemAt indexPath: IndexPath) {
-        guard let cell = cell as? MenuController else { return }
+//        guard let cell = cell as? MenuController else { return }
         let menuItem = menuItems[indexPath.row]
-        
-        cell.itemName = menuItem.name
-        cell.price = menuItem.price
-        cell.image = nil
-        
-        imageLoadTasks[indexPath] = Task.init {
-            if let image = try? await MenuController.shared.fetchImage(from: menuItem.imageURL) {
-                if let currentIndexPath = self.tableView.indexPath(for: cell),
-                        currentIndexPath == indexPath {
-                    cell.image = image
+//
+//        cell.itemName = menuItem.name
+//        cell.price = menuItem.price
+//        cell.image = nil
+//
+//        imageLoadTasks[indexPath] = Task.init {
+//            if let image = try? await MenuController.shared.fetchImage(from: menuItem.imageURL) {
+//                if let currentIndexPath = self.tableView.indexPath(for: cell),
+//                        currentIndexPath == indexPath {
+//                    cell.image = image
             
         
         var content = cell.defaultContentConfiguration()
