@@ -268,8 +268,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="unwindToOrderList:" destination="g60-Db-ikL" eventType="touchUpInside" id="Ymn-Qm-wqt"/>
-                                    <segue destination="J2r-qZ-jX0" kind="unwind" identifier="dismissConfirmation" unwindAction="unwindToOrderListWithSegue:" id="7pe-yX-78s"/>
+                                    <segue destination="J2r-qZ-jX0" kind="unwind" identifier="dismissConfirmation" unwindAction="unwindToOrderListWithSegue:" id="Sxj-ud-jrX"/>
                                 </connections>
                             </button>
                         </subviews>
