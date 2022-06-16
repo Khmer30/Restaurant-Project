@@ -12,6 +12,8 @@ class MenuTableViewController: UITableViewController {
     let category: String
     let menuController = MenuController()
     var menuItems = [MenuItem]()
+    var imageLoadTasks: [IndexPath: Task<Void, Never
+                         >] = [:]
     
     init?(coder: NSCoder, category: String) {
         self.category = category
@@ -21,8 +23,6 @@ class MenuTableViewController: UITableViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    var imageLoadTasks: [IndexPath: Task<Void, Never>] = [:]
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -90,25 +90,22 @@ class MenuTableViewController: UITableViewController {
     }
     
     func configure(_ cell: UITableViewCell, forItemAt indexPath: IndexPath) {
-        let menuItem = menuItems[indexPath.row]
+        guard let cell = cell as? MenuItemCell else { return }
+        let menuItem =  menuItems[indexPath.row]
         
-        var content = cell.defaultContentConfiguration()
-        content.text = menuItem.name
-        content.secondaryText = menuItem.price.formatted(.currency(code: "usd"))
-        content.image = UIImage(systemName: "photo.on.rectangle")
-        cell.contentConfiguration = content
+        cell.itemName = menuItem.name
+        cell.price = menuItem.price
+        cell.image = nil
+        
         imageLoadTasks[indexPath] = Task.init {
             if let image = try? await MenuController.shared.fetchImage(from: menuItem.imageURL) {
                 if let currentIndexPath = self.tableView.indexPath(for: cell),
                    currentIndexPath == indexPath {
-                    var content = cell.defaultContentConfiguration()
-                    content.text = menuItem.name
-                    content.secondaryText = menuItem.price.formatted(.currency(code: "usd"))
-                    content.image = image
-                    cell.contentConfiguration = content
+                    cell.image = image
                 }
             }
             imageLoadTasks[indexPath] = nil
         }
+
     }
 }
