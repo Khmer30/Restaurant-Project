@@ -90,26 +90,6 @@ class MenuTableViewController: UITableViewController {
     }
     
     func configure(_ cell: UITableViewCell, forItemAt indexPath: IndexPath) {
-//        let menuItem = menuItems[indexPath.row]
-//
-//        var content = cell.defaultContentConfiguration()
-//        content.text = menuItem.name
-//        content.secondaryText = menuItem.price.formatted(.currency(code: "usd"))
-//        content.image = UIImage(systemName: "photo.on.rectangle")
-//        cell.contentConfiguration = content
-//        imageLoadTasks[indexPath] = Task.init {
-//            if let image = try? await MenuController.shared.fetchImage(from: menuItem.imageURL) {
-//                if let currentIndexPath = self.tableView.indexPath(for: cell),
-//                   currentIndexPath == indexPath {
-//                    var content = cell.defaultContentConfiguration()
-//                    content.text = menuItem.name
-//                    content.secondaryText = menuItem.price.formatted(.currency(code: "usd"))
-//                    content.image = image
-//                    cell.contentConfiguration = content
-//                }
-//            }
-//            imageLoadTasks[indexPath] = nil
-//        }
         guard let cell = cell as? MenuItemCell else { return }
         let menuItem =  menuItems[indexPath.row]
         
